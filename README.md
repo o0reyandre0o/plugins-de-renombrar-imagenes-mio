@@ -1,0 +1,1 @@
+# plugins-de-renombrar-imagenes-mio
