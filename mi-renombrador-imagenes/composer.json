@@ -1,0 +1,27 @@
+{
+    "name": "tu-usuario/mi-renombrador-imagenes",
+    "description": "Plugin completo de optimización de imágenes con IA, compresión y renombrado automático para mejorar el SEO",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "version": "3.6.0",
+    "authors": [
+        {
+            "name": "Tu Nombre",
+            "email": "tu-email@dominio.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "MRI\\": "includes/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

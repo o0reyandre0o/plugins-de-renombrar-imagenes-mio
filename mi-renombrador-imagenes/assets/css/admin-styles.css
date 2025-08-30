@@ -1,0 +1,577 @@
+/**
+ * Estilos para la interfaz de administración
+ * 
+ * Estilos CSS para las páginas de configuración y procesamiento masivo
+ * del plugin Toc Toc SEO Images.
+ *
+ * @package MRI
+ * @since 3.6.0
+ */
+
+/* ============================================================================
+   ESTILOS GENERALES DEL PLUGIN
+   ============================================================================ */
+
+.mri-admin-header {
+    background: #f8f9fa;
+    border-left: 4px solid #007cba;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.mri-admin-header p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Tabs de navegación */
+.mri-admin-tabs {
+    margin-bottom: 20px;
+}
+
+.mri-admin-tabs .nav-tab {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.mri-admin-tabs .nav-tab-active {
+    background: #007cba;
+    color: #fff;
+    border-color: #007cba;
+}
+
+/* ============================================================================
+   FORMULARIOS Y CAMPOS
+   ============================================================================ */
+
+/* Campos de entrada mejorados */
+.form-table input[type="text"],
+.form-table input[type="password"],
+.form-table input[type="number"],
+.form-table select {
+    transition: border-color 0.2s ease;
+}
+
+.form-table input[type="text"]:focus,
+.form-table input[type="password"]:focus,
+.form-table input[type="number"]:focus,
+.form-table select:focus {
+    border-color: #007cba;
+    box-shadow: 0 0 0 1px #007cba;
+}
+
+/* Campo inválido */
+.form-table input.invalid {
+    border-color: #d63638;
+    box-shadow: 0 0 0 1px #d63638;
+}
+
+/* Errores de campo */
+.mri-field-error {
+    color: #d63638;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Toggles mejorados */
+.mri-toggle-wrapper {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mri-toggle-wrapper input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.mri-toggle-slider {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.mri-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.mri-toggle-wrapper input:checked + .mri-toggle-slider {
+    background-color: #007cba;
+}
+
+.mri-toggle-wrapper input:checked + .mri-toggle-slider:before {
+    transform: translateX(24px);
+}
+
+/* Selects mejorados */
+.mri-enhanced-select {
+    min-width: 200px;
+    padding: 6px 12px;
+}
+
+/* ============================================================================
+   INFORMACIÓN DEL SISTEMA
+   ============================================================================ */
+
+.mri-system-info {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-top: 30px;
+    padding: 0;
+}
+
+.mri-system-info h2 {
+    background: #f8f9fa;
+    border-bottom: 1px solid #ccd0d4;
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 16px;
+}
+
+.mri-system-info .form-table {
+    margin: 0;
+}
+
+.mri-system-info th {
+    width: 200px;
+    font-weight: 600;
+}
+
+.mri-system-info .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+/* ============================================================================
+   PROCESAMIENTO MASIVO
+   ============================================================================ */
+
+.mri-bulk-processor {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.mri-bulk-status h2 {
+    margin-top: 0;
+    color: #1d2327;
+    font-size: 18px;
+}
+
+/* Información de estado */
+.mri-status-info {
+    background: #f8f9fa;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.mri-status-info p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.mri-status-info strong {
+    display: inline-block;
+    width: 150px;
+}
+
+/* Barra de progreso */
+.mri-progress-bar {
+    width: 100%;
+    height: 24px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 15px 0;
+    border: 1px solid #ccd0d4;
+}
+
+#mri-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007cba, #00a0d2);
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 12px;
+    position: relative;
+}
+
+#mri-progress-fill:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, .2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, .2) 50%,
+        rgba(255, 255, 255, .2) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 30px 30px;
+    animation: move 2s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 30px 30px;
+    }
+}
+
+#mri-progress-text {
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1d2327;
+    margin: 10px 0;
+}
+
+/* Controles de procesamiento */
+.mri-bulk-controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mri-bulk-controls .button-hero {
+    font-size: 16px;
+    padding: 10px 30px;
+    margin: 0 10px;
+}
+
+#mri-start-bulk {
+    background: #00a32a;
+    border-color: #00a32a;
+    color: #fff;
+}
+
+#mri-start-bulk:hover {
+    background: #008a20;
+    border-color: #008a20;
+}
+
+#mri-stop-bulk {
+    background: #d63638;
+    border-color: #d63638;
+    color: #fff;
+}
+
+#mri-stop-bulk:hover {
+    background: #b32d2e;
+    border-color: #b32d2e;
+}
+
+/* ============================================================================
+   LOG DE PROCESAMIENTO
+   ============================================================================ */
+
+.mri-log-container {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.mri-log-container h3 {
+    background: #f8f9fa;
+    border-bottom: 1px solid #ccd0d4;
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 16px;
+}
+
+#mri-log-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Entradas de log */
+.mri-log-entry {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 3px;
+    border-left: 3px solid;
+    background: #f9f9f9;
+}
+
+.mri-log-entry.mri-log-info {
+    border-left-color: #72aee6;
+    background: #f0f6fc;
+}
+
+.mri-log-entry.mri-log-success {
+    border-left-color: #00a32a;
+    background: #f0f6f0;
+}
+
+.mri-log-entry.mri-log-warning {
+    border-left-color: #dba617;
+    background: #fcf9e8;
+}
+
+.mri-log-entry.mri-log-error {
+    border-left-color: #d63638;
+    background: #fcf0f0;
+}
+
+.mri-log-time {
+    color: #666;
+    font-size: 11px;
+    margin-right: 10px;
+}
+
+.mri-log-icon {
+    margin-right: 8px;
+}
+
+.mri-log-message {
+    color: #1d2327;
+}
+
+/* Scroll personalizado para el log */
+#mri-log-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#mri-log-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#mri-log-messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+#mri-log-messages::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ============================================================================
+   NOTICES PERSONALIZADOS
+   ============================================================================ */
+
+.mri-temp-notice {
+    margin: 15px 0;
+}
+
+.notice.mri-temp-notice p {
+    font-weight: 500;
+}
+
+/* ============================================================================
+   RESPONSIVO
+   ============================================================================ */
+
+@media screen and (max-width: 782px) {
+    .mri-admin-header {
+        margin: 15px 0;
+        padding: 12px 15px;
+    }
+    
+    .mri-bulk-processor {
+        padding: 15px;
+    }
+    
+    .mri-bulk-controls .button-hero {
+        font-size: 14px;
+        padding: 8px 20px;
+        margin: 5px;
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 5px auto;
+    }
+    
+    .mri-status-info strong {
+        width: auto;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    #mri-log-messages {
+        font-size: 12px;
+        padding: 10px;
+        max-height: 300px;
+    }
+    
+    .mri-toggle-wrapper {
+        margin: 5px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mri-admin-tabs .nav-tab {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    
+    .mri-progress-bar {
+        height: 20px;
+    }
+    
+    #mri-progress-text {
+        font-size: 12px;
+    }
+    
+    .mri-log-entry {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+/* ============================================================================
+   ACCESIBILIDAD
+   ============================================================================ */
+
+/* Mejoras para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Foco visible mejorado */
+.mri-toggle-slider:focus,
+button:focus,
+input:focus,
+select:focus {
+    outline: 2px solid #007cba;
+    outline-offset: 2px;
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+    .mri-log-entry {
+        border-left-width: 4px;
+    }
+    
+    .mri-progress-bar {
+        border-width: 2px;
+    }
+    
+    #mri-progress-fill {
+        background: #000;
+    }
+}
+
+/* Reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    #mri-progress-fill {
+        transition: none;
+    }
+    
+    #mri-progress-fill:after {
+        animation: none;
+    }
+    
+    .mri-toggle-slider,
+    .mri-toggle-slider:before {
+        transition: none;
+    }
+}
+
+/* ============================================================================
+   UTILIDADES
+   ============================================================================ */
+
+.mri-text-center {
+    text-align: center;
+}
+
+.mri-text-right {
+    text-align: right;
+}
+
+.mri-margin-top {
+    margin-top: 20px;
+}
+
+.mri-margin-bottom {
+    margin-bottom: 20px;
+}
+
+.mri-hidden {
+    display: none !important;
+}
+
+.mri-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ============================================================================
+   ESTADOS DE CARGA
+   ============================================================================ */
+
+.mri-loading {
+    position: relative;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.mri-loading:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -12px 0 0 -12px;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #007cba;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
